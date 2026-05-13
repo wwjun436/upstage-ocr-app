@@ -1,0 +1,36 @@
+{
+  "master": {
+    "tasks": [
+      {"id": 1, "title": "백엔드 스토리지 서비스 구현 (storage_service.py)", "description": "expenses.json 파일을 읽고 쓰는 기본 스토리지 서비스 레이어 구현", "priority": "high", "dependencies": [], "status": "pending", "subtasks": []},
+      {"id": 2, "title": "이미지 전처리 유틸리티 구현", "description": "JPG/PNG/PDF 파일을 Base64로 인코딩하는 전처리 함수 구현", "priority": "high", "dependencies": [1], "status": "pending", "subtasks": []},
+      {"id": 3, "title": "Upstage Vision LLM OCR 파싱 로직 구현", "description": "LangChain + Upstage ChatUpstage를 사용하여 영수증 이미지를 JSON으로 파싱", "priority": "high", "dependencies": [2], "status": "pending", "subtasks": []},
+      {"id": 4, "title": "업로드 라우터 구현 (POST /api/upload)", "description": "영수증 파일 업로드 및 OCR 파싱 엔드포인트 구현", "priority": "high", "dependencies": [3], "status": "pending", "subtasks": []},
+      {"id": 5, "title": "지출 조회 엔드포인트 구현 (GET /api/expenses)", "description": "저장된 지출 내역 조회 및 날짜 필터링 기능 구현", "priority": "high", "dependencies": [1], "status": "pending", "subtasks": []},
+      {"id": 6, "title": "지출 수정 엔드포인트 구현 (PUT /api/expenses/{id})", "description": "특정 지출 항목의 필드를 부분 업데이트하는 API 구현", "priority": "medium", "dependencies": [1], "status": "pending", "subtasks": []},
+      {"id": 7, "title": "지출 삭제 엔드포인트 구현 (DELETE /api/expenses/{id})", "description": "특정 지출 항목을 삭제하는 API 구현", "priority": "medium", "dependencies": [1], "status": "pending", "subtasks": []},
+      {"id": 8, "title": "지출 통계 엔드포인트 구현 (GET /api/summary)", "description": "총 지출, 이번 달 지출, 카테고리별 통계를 반환하는 API 구현", "priority": "medium", "dependencies": [1], "status": "pending", "subtasks": []},
+      {"id": 9, "title": "프론트엔드 Vite + React 프로젝트 초기화", "description": "Vite를 사용한 React 18 프로젝트 생성 및 기본 설정", "priority": "high", "dependencies": [], "status": "pending", "subtasks": []},
+      {"id": 10, "title": "TailwindCSS 설정 및 커스텀 애니메이션 구성", "description": "TailwindCSS 설정 파일 작성 및 PRD의 커스텀 애니메이션 추가", "priority": "high", "dependencies": [9], "status": "pending", "subtasks": []},
+      {"id": 11, "title": "Axios 인스턴스 및 API 클라이언트 구성", "description": "백엔드 API 호출을 위한 Axios 설정 및 API 함수 작성", "priority": "high", "dependencies": [9], "status": "pending", "subtasks": []},
+      {"id": 12, "title": "React Router 설정 및 기본 라우팅 구성", "description": "3개 주요 페이지 라우팅 설정 (Dashboard, UploadPage, ExpenseDetail)", "priority": "high", "dependencies": [9], "status": "pending", "subtasks": []},
+      {"id": 13, "title": "공통 컴포넌트 구현 (Header, Toast, Badge)", "description": "모든 페이지에서 사용하는 공통 UI 컴포넌트 3종 구현", "priority": "high", "dependencies": [10, 12], "status": "pending", "subtasks": []},
+      {"id": 14, "title": "DropZone 컴포넌트 구현", "description": "드래그 앤 드롭 및 클릭 파일 업로드를 지원하는 컴포넌트 구현", "priority": "high", "dependencies": [10], "status": "pending", "subtasks": []},
+      {"id": 15, "title": "ProgressBar 및 ParsePreview 컴포넌트 구현", "description": "OCR 처리 진행 상태 표시 및 파싱 결과 미리보기 컴포넌트 구현", "priority": "high", "dependencies": [10], "status": "pending", "subtasks": []},
+      {"id": 16, "title": "UploadPage 페이지 구현 및 통합", "description": "DropZone → OCR 파싱 → ParsePreview 전체 업로드 플로우 구현", "priority": "high", "dependencies": [11, 13, 14, 15], "status": "pending", "subtasks": []},
+      {"id": 17, "title": "ExpenseCard 컴포넌트 구현", "description": "지출 내역을 카드 형태로 표시하는 컴포넌트 구현", "priority": "high", "dependencies": [10, 13], "status": "pending", "subtasks": []},
+      {"id": 18, "title": "SummaryCard 및 FilterBar 컴포넌트 구현", "description": "지출 합계 요약 카드 및 날짜 필터 컴포넌트 구현", "priority": "medium", "dependencies": [10], "status": "pending", "subtasks": []},
+      {"id": 19, "title": "Dashboard 페이지 구현 및 통합", "description": "SummaryCard, FilterBar, ExpenseCard를 조합한 메인 대시보드 구현", "priority": "high", "dependencies": [11, 13, 17, 18], "status": "pending", "subtasks": []},
+      {"id": 20, "title": "Modal 및 ReceiptImage 컴포넌트 구현", "description": "삭제 확인 다이얼로그 및 영수증 이미지 미리보기 컴포넌트 구현", "priority": "medium", "dependencies": [10], "status": "pending", "subtasks": []},
+      {"id": 21, "title": "ExpenseDetail 페이지 구현 (조회 및 삭제)", "description": "특정 지출 항목의 상세 정보 조회 및 삭제 기능 구현", "priority": "medium", "dependencies": [11, 13, 17, 20], "status": "pending", "subtasks": []},
+      {"id": 22, "title": "ExpenseDetail 페이지 수정 기능 추가 (EditForm)", "description": "지출 항목 필드 수정 및 저장 기능 구현", "priority": "low", "dependencies": [21], "status": "pending", "subtasks": []},
+      {"id": 23, "title": "Vercel 배포 설정 파일 작성 (vercel.json)", "description": "프론트엔드 정적 빌드 및 백엔드 서버리스 함수 배포 설정", "priority": "high", "dependencies": [4, 5, 6, 7, 8, 16, 19], "status": "pending", "subtasks": []},
+      {"id": 24, "title": "환경변수 설정 및 .env 파일 관리", "description": "개발/프로덕션 환경변수 설정 및 .env.example 파일 작성", "priority": "high", "dependencies": [23], "status": "pending", "subtasks": []},
+      {"id": 25, "title": "E2E 통합 테스트 및 배포 검증", "description": "전체 플로우 테스트 및 Vercel 배포 URL에서 동작 확인", "priority": "high", "dependencies": [23, 24], "status": "pending", "subtasks": []}
+    ],
+    "metadata": {
+      "created": "2026-05-13T08:06:47.763Z",
+      "updated": "2026-05-13T08:11:00.223Z",
+      "description": "Tasks for master context"
+    }
+  }
+}
